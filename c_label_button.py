@@ -1,30 +1,38 @@
 # -*- coding: utf-8 -*-
 
-import tkinter as tk
+from tkinter import Tk, Label,LEFT,W,Button,PhotoImage
 
-# 声明一个应用主窗口
-windows = tk.Tk()
-# 设置窗口大小 widthxheigth
-windows.geometry("200x100")
-# 标题
-windows.title("my first tk")
 
-var1 = tk.StringVar()
-on_line = True
-def show_label():
-    global on_line
-    if on_line:
-        var1.set("hit me")
-        on_line = False
-    else:
-        var1.set("")
-        on_line = True
+# label 创建使用案例
+def main_label():
+    # 声明一个应用主窗口
+    root = Tk()
+    # 设置窗口大小 widthxheigth
+    # root.geometry("200x100")
+    # 标题
+    root.title("my first tk")
+    long_text = """
+    hello
+    world
+    """
+    Label(root,text=long_text,justify="center", anchor="nw").pack()
+    root.mainloop()
 
-# label
-l = tk.Label(windows,textvariable=var1, state="disable",background="yellow",font="Arial",underline=1)
-# 按钮
-# command : callback 回调方法
-b = tk.Button(windows,height=2,width=10,text="hit me",bg="green",command=show_label)
-l.pack()
-b.pack()
-windows.mainloop()
+def callback(val):
+    print(val)
+    print("回调函数")
+
+def main_button():
+    root = Tk()
+    # Button(root,text="点我", command=callback).pack()
+    # 传参
+    # Button(root,text="点我", command=lambda : callback("hello")).pack()
+    photo = PhotoImage(file=r"E:\demo\intel\timg.gif")
+    # compound: 让文字显示的位置
+    Button(root,text="点我",image=photo, compound = "center",font=20,fg="black").pack()
+
+    root.mainloop()
+
+if __name__ == "__main__":
+    # main_label()
+    main_button()
