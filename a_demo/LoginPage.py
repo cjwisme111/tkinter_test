@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from tkinter.messagebox import *
-from tkinter_test.a_demo.MainPage import *
+from tkinter_test.a_v2_demo.MainPage import *
 
 
 class LoginPage(object):

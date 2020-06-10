@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from tkinter_test.a_demo.view import *  # 菜单栏对应的各个子页面
+from tkinter_test.a_v2_demo.view import *  # 菜单栏对应的各个子页面
 
 
 class MainPage(object):
